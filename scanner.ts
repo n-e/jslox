@@ -37,7 +37,7 @@ class Reader {
   }
 }
 
-interface TokenMeta {
+export interface TokenMeta {
   position: number;
   line: number;
   col: number;
@@ -83,20 +83,20 @@ interface StandardToken {
     | "VAR"
     | "WHILE";
 }
-interface IdentifierToken {
+export interface IdentifierToken {
   type: "IDENTIFIER";
   literal: string;
 }
-interface StringToken {
+export interface StringToken {
   type: "STRING";
   literal: string;
 }
-interface NumberToken {
+export interface NumberToken {
   type: "NUMBER";
   literal: number;
 }
 
-type Token = StandardToken | IdentifierToken | StringToken | NumberToken;
+export type Token = StandardToken | IdentifierToken | StringToken | NumberToken;
 
 export const scan = (data: string) => {
   const reader = new Reader(data);
